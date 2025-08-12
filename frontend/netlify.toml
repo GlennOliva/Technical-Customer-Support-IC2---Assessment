@@ -1,8 +1,8 @@
 [build]
   base = "frontend"
   command = "npm run build"
-  publish = "frontend/dist"
-  functions = "frontend/netlify/functions" # Only if you actually have serverless functions
+  publish = "dist"
+  functions = "netlify/functions" # Only if you actually have serverless functions
 
 # Redirect for React Router (prevents 404 on refresh in SPA)
 [[redirects]]
