@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "build" # or "dist" if you use Vite or another bundler
+  functions = "netlify/functions" # only if you use Netlify Functions
+
+# Redirect for React Router (prevents 404 on refresh in SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 301 redirect: /netlify/anything → Google search for "anything"
+[[redirects]]
+  from = "/netlify/:splat"
+  to = "https://www.google.com/search?q=:splat"
+  status = 301
+  force = true
+
+# Proxy redirect (URL stays the same, content served from Google)
+[[redirects]]
+  from = "/proxy/:splat"
+  to = "https://www.google.com/search?q=:splat"
+  status = 200
