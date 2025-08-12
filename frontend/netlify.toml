@@ -1,7 +1,8 @@
 [build]
+  base = "frontend"
   command = "npm run build"
-  publish = "build" # or "dist" if you use Vite or another bundler
-  functions = "netlify/functions" # only if you use Netlify Functions
+  publish = "frontend/dist"
+  functions = "frontend/netlify/functions" # Only if you actually have serverless functions
 
 # Redirect for React Router (prevents 404 on refresh in SPA)
 [[redirects]]
